@@ -128,6 +128,6 @@ class NITEC_Classifier:
         # Classify
         output = self.model(img)
         output = F.sigmoid(output)
-        val = output.cpu().numpy()[:,1]
+        val = output.cpu().detach().numpy()[:,1]
         return val
 
